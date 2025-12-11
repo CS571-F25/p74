@@ -1,35 +1,21 @@
 
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, Outlet } from "react-router";
-import React, { useState } from "react";
 
 export default function Layout(props) {
     // TODO 
-    const [loginStatus, setLoginStatus] = useState(() => {
-        return true;
-    })
 
     return (
         <>
-            <Navbar bg="dark" variant="dark" sticky="top" expand="md">
+            <Navbar className="custom-nav" sticky="top" expand="md" fixed="top">
                 <Container>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav" className="me-auto">
+                    <Navbar.Toggle aria-controls="main-navbar" />
+                    <Navbar.Collapse id="main-navbar">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/">Cover</Nav.Link>
-                            <Nav.Link as={Link} to="/front">Front Page</Nav.Link>
-                            <Nav.Link as={Link} to="/contents">Contents</Nav.Link>
+                            <Nav.Link as={Link} to="/">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/contents">All Recipes</Nav.Link>
                             <Nav.Link as={Link} to="/feature">Featured</Nav.Link>
-
-                            {loginStatus ? (
-                                <>
-                                    <Nav.Link as={Link} to="bookmarks">Bookmarks</Nav.Link>
-                                    <Nav.Link as={Link} to="logout">Logout</Nav.Link>
-                                </>
-                            ) : (
-                                <>
-                                </>
-                            )}
+                            <Nav.Link as={Link} to="/add">Add Recipe</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

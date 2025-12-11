@@ -1,6 +1,6 @@
 #root {
   width: 100vw;
-  height: 100vw;
+  min-height: 100vh;
 }
 
 .logo {
@@ -37,4 +37,35 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.custom-nav {
+  background-color: #753434 !important;
+}
+
+.custom-nav .nav-link {
+  color: #fff !important;
+}
+.custom-nav .navbar-toggler {
+  border-color: #fff !important;
+}
+.custom-nav .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.custom-nav .nav-link:hover {
+  background-color: #4a2020 !important;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #C0C9B2 !important;
+  border-color: #C0C9B2 !important;
+  color: #000 !important;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #aab39e !important;
+  border-color: #aab39e !important;
 }
