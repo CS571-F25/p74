@@ -69,3 +69,28 @@
   background-color: #aab39e !important;
   border-color: #aab39e !important;
 }
+
+.btn-delete {
+  background-color: #C04644 !important;
+  border-color: #C04644 !important;
+  color: #fff !important;
+  transition: 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a33735 !important; /* slightly darker */
+  border-color: #a33735 !important;
+}
+
+.image-drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.image-drop-zone-active {
+  border-color: #C0C9B2;
+  background-color: #f5f7f0;
+}

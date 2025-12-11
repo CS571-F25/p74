@@ -6,7 +6,6 @@ import { addRecipe } from "../../../data/recipes";
 export default function AddTextRecipe() {
     const navigate = useNavigate();
 
-    // Form state
     const [name, setName] = useState("");
     const [category, setCategory] = useState("Breakfast");
 
@@ -19,7 +18,6 @@ export default function AddTextRecipe() {
     ]);
 
     const [notes, setNotes] = useState("");
-
 
     /* INGREDIENT HANDLERS */
     function handleIngredientChange(index, field, value) {
@@ -36,7 +34,6 @@ export default function AddTextRecipe() {
         setIngredients(ingredients.filter((_, i) => i !== index));
     }
 
-
     /* DIRECTIONS HANDLERS */
     function handleDirectionChange(index, value) {
         const updated = [...directions];
@@ -51,7 +48,6 @@ export default function AddTextRecipe() {
     function removeDirectionRow(index) {
         setDirections(directions.filter((_, i) => i !== index));
     }
-
 
     /* SUBMIT */
     function handleSubmit(e) {
@@ -68,14 +64,13 @@ export default function AddTextRecipe() {
         navigate("/contents");
     }
 
-
     return (
         <div>
             <h1>Add a New Recipe</h1>
 
             <Card className="p-4 mt-3">
                 <Form onSubmit={handleSubmit}>
-                    
+
                     {/* Recipe Name */}
                     <Form.Group className="mb-3">
                         <Form.Label>Recipe Name</Form.Label>
@@ -137,6 +132,7 @@ export default function AddTextRecipe() {
                                         <Button
                                             variant="danger"
                                             onClick={() => removeIngredientRow(i)}
+                                            type="button"
                                         >
                                             X
                                         </Button>
@@ -145,15 +141,15 @@ export default function AddTextRecipe() {
                             </Row>
                         ))}
 
-                        <Button 
-                            variant="secondary" 
+                        <Button
+                            variant="secondary"
                             className="mt-2"
                             onClick={addIngredientRow}
+                            type="button"
                         >
                             + Add Ingredient
                         </Button>
                     </Form.Group>
-
 
                     {/* DIRECTIONS — ordered list builder */}
                     <Form.Group className="mb-3">
@@ -179,6 +175,7 @@ export default function AddTextRecipe() {
                                         <Button
                                             variant="danger"
                                             onClick={() => removeDirectionRow(i)}
+                                            type="button"
                                         >
                                             X
                                         </Button>
@@ -191,6 +188,7 @@ export default function AddTextRecipe() {
                             variant="secondary"
                             className="mt-2"
                             onClick={addDirectionRow}
+                            type="button"
                         >
                             + Add Step
                         </Button>
